@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Your own server",
+            "server": "http://192.168.0.58/",
+            "serverInstance": "nav",
+            "authentication": "UserPassword",
+            "startupObjectId": 22,
+            "startupObjectType": "Page"
+        }
+    ]
+}
