@@ -1,4 +1,4 @@
-codeunit 70140923 UAEFAFFileGenerationTest
+codeunit 70140923 UAEVATFilingTest
 {
     Subtype = Test;
     TestPermissions = Disabled;
@@ -24,39 +24,35 @@ codeunit 70140923 UAEFAFFileGenerationTest
     procedure UAETestDXBSales()
     begin
         InitiateVATTransaction('VAT_DXB','VAT_5G', 25000);
-        Assert.AreEqual( CalculateVATReturn(ENUM_EMIRATES::UAE, ENUM_VATTYPE::Value), (0.05 * 25000), 'The amounts do not match');
+        Assert.AreEqual( CalculateVATReturn(ENUM_EMIRATES::UAE, ENUM_VATTYPE::Value), (0.05 * 25000), 'The VAT amount calculated does not match');
     end;
 
     [Test]
     procedure UAETestAUHSales()
-    var
-        myInt: Integer;
     begin
-    
+        InitiateVATTransaction('VAT_ADU','VAT_5G', 25000);
+        Assert.AreEqual( CalculateVATReturn(ENUM_EMIRATES::UAE, ENUM_VATTYPE::Value), (0.05 * 25000), 'The amounts do not match');    
     end;
 
     [Test]
     procedure UAETestFJRSales()
-    var
-        myInt: Integer;
     begin
-        
+        InitiateVATTransaction('VAT_FJH','VAT_5G', 25000);
+        Assert.AreEqual( CalculateVATReturn(ENUM_EMIRATES::UAE, ENUM_VATTYPE::Value), (0.05 * 25000), 'The amounts do not match');            
     end;
 
     [Test]
     procedure UAETestRAKSales()
-    var
-        myInt: Integer;
     begin
-        
+        InitiateVATTransaction('VAT_RAK','VAT_5G', 25000);
+        Assert.AreEqual( CalculateVATReturn(ENUM_EMIRATES::UAE, ENUM_VATTYPE::Value), (0.05 * 25000), 'The amounts do not match');                    
     end;
 
     [Test]
     procedure UAETestSHJSales()
-    var
-        myInt: Integer;
     begin
-        
+        InitiateVATTransaction('VAT_SHJ','VAT_5G', 25000);
+        Assert.AreEqual( CalculateVATReturn(ENUM_EMIRATES::UAE, ENUM_VATTYPE::Value), (0.05 * 25000), 'The amounts do not match');                    
     end;
 
     [Test]
